@@ -1,0 +1,23 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug R22" />
+    <BuildType Name="Debug R23" />
+    <BuildType Name="Debug R24" />
+    <BuildType Name="Debug R25" />
+    <BuildType Name="Debug R26" />
+    <BuildType Name="Debug R27" />
+    <BuildType Name="Release R22" />
+    <BuildType Name="Release R23" />
+    <BuildType Name="Release R24" />
+    <BuildType Name="Release R25" />
+    <BuildType Name="Release R26" />
+    <BuildType Name="Release R27" /> 
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="RevitAddin1/RevitAddin1.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="RevitAddin2/RevitAddin2.csproj" Id="87fca1eb-4758-47f2-9548-917fe7de1c20">
+    <Platform Project="x64" />
+  </Project>
+</Solution>

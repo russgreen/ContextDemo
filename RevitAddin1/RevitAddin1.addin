@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <!--<AddIn Type="Command">
+    <Text>Command RevitAddin1</Text>
+    <Description>Some description for RevitAddin1</Description>
+    <Assembly>RevitAddin1.dll</Assembly>
+    <FullClassName>RevitAddin1.Command</FullClassName>
+    <ClientId>d4927302-40ff-4165-9459-94d390d408f5</ClientId>
+    <VendorId>TBC_</VendorId>
+  </AddIn>-->
+  
+  <AddIn Type="Application">
+    <Name>RevitAddin1</Name>
+    <Assembly>RevitAddin1.dll</Assembly>
+	<AddInId>79E58B89-46E2-46F7-8801-55F33D9822F4</AddInId>
+    <FullClassName>RevitAddin1.App</FullClassName>
+    <VendorId>ARBG</VendorId>
+	<VisibilityMode>NotVisibleInFamily</VisibilityMode>
+	<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+</RevitAddIns>
