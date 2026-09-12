@@ -5,8 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RevitAddin1"
-        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
-        xmlns:viewModels="clr-namespace:RevitAddin1.ViewModels" 
+        xmlns:viewModels="clr-namespace:RevitAddin1.ViewModels"
         mc:Ignorable="d"
         Title="{Binding WindowTitle}" Height="300" Width="600" 
         FontSize="14" FontFamily="Segoe UI Light" 
@@ -18,9 +17,14 @@
             <RowDefinition MaxHeight="30"/>
         </Grid.RowDefinitions>
 
-        <syncfusion:SfDataGrid x:Name="sfDatagrid" 
-                               ItemsSource="{Binding Views}"
-                                 AutoGenerateColumns="true" Margin="0,0,0,5"  />
+        <!-- SfDataGrid is constructed in code-behind (see MainView.xaml.cs), not here.
+             Revit isolates each add-in into its own AssemblyLoadContext, and WPF's
+             XAML/BAML type resolver is not AssemblyLoadContext-aware - it can resolve
+             a <syncfusion:SfDataGrid> element here against a DIFFERENT add-in's copy
+             of Syncfusion.SfGrid.WPF, causing an InvalidCastException. Building the
+             control in C# instead binds through the normal, AssemblyLoadContext-aware
+             CLR loader, which always picks this add-in's own copy. -->
+        <ContentControl x:Name="sfDataGridHost" Margin="0,0,0,5" />
 
         <Button Grid.Column="1" Grid.Row="1" Content="Close"  IsCancel="True" />
     </Grid>
